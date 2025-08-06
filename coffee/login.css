@@ -1,0 +1,495 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+
+:root{
+    --main-color:#d3ad7f;
+    --black:#13131a;
+    --bg:#010103;
+    --border: 1px solid rgba(255,255,255,.3);
+
+}
+*{
+   font-family: 'Montserrat', sans-serif;
+font-family: "Roboto", sans-serif;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+text-decoration: none;
+outline: none;
+border: none;
+text-transform: capitalize;
+transition: 0.2s linear;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+html::-webkit-scrollbar{
+    width: .3rem;
+}
+html::-webkit-scrollbar-track{
+  background: transparent;
+}
+html::-webkit-scrollbar-thumb{
+    background: #fff;
+    border-radius: .5rem;
+  }
+  /*  */
+    body{
+    background: var(--bg);
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+/* 
+header */
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem 7%;
+    z-index: 1000;
+    position: fixed;
+    border-bottom: var(--border);
+ background: var(--bg); 
+}
+
+.logo img{
+    height: 100px;
+  }
+.header .navbar a{
+    margin: 0 1rem;
+    font-size: 1.6rem;
+    color: white;
+    cursor: pointer;
+}
+
+.header .navbar .all-link:hover{
+ border-bottom: 1px solid var(--main-color);
+    color: var(--main-color);
+ padding-bottom: .5rem;
+}
+
+ .header .navbar .login-link{
+      color: rgb(17, 17, 17);
+    
+    border-bottom: 1px solid var(--main-color); 
+    padding-bottom: .5rem;
+   background: linear-gradient(to right, #d4bc9f, #694726);
+    /* background: var(--main-color); */
+padding: .7rem ;
+border-radius: 10px;
+font-weight: bold;
+}
+ .header .navbar .login-link:hover{
+  /* background-color:#93683e ; */
+    background: linear-gradient(to right,#694726, #d4bc9f);
+ }
+
+#menu-btn{
+    display: none;
+    cursor: pointer;
+    color: white;
+    margin: 0 1rem 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    
+  }
+.header .icon i:hover{
+    color: var(--main-color);
+  }
+
+/* !media quary */
+  @media( max-width:768px){
+#menu-btn{
+    display: inline-block
+
+}  
+.header .navbar{
+
+    position: absolute;
+    background-color: #fff;
+    right: -100%;
+    top: 100%;
+    width: 25rem;
+    height: calc(100vh - 9.5rem);
+     transition: 1s linear;
+     z-index: 2500;
+}
+
+
+
+.header .navbar a{
+    display: block;
+    /* padding: 1rem; */
+    color: #010103;
+    margin: 3rem;
+      font-size: 1.3rem;
+}
+ .navbar .login-link{
+    display: none !important;
+    
+}
+  }
+
+
+  .header .navbar.active{
+    right: 0;
+       z-index: 1000;
+  }
+/*  */
+
+     /* ! */
+
+   
+
+
+.container{
+   margin-top: 14rem;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 400px;
+}
+
+/*  */
+  .container p{
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 20px 0;
+}
+
+.container span{
+    font-size: 12px;
+}
+
+.container a{
+    color: #333;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 15px 0 10px;
+}
+
+.container a:hover{
+   background-color: var(--main-color);
+}
+.container .forget:hover{
+   background: none;
+} 
+
+
+ /* background-color: #2da0a8;  */
+
+.container button{
+
+      background-color:#93683e;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+    
+
+}
+
+.container button:hover{
+   background-color: var(--main-color);
+}
+.container button.hidden{
+    background-color: transparent;
+    border-color: #fff;
+}
+
+.container form{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    height: 100%;
+}
+
+
+.container input{
+    background-color: #d7d7d7;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+
+.form-container{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+
+.sign-in{
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.container.active .sign-in{
+    transform: translateX(100%);
+}
+
+
+.sign-up{
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.active .sign-up{
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s;
+}
+
+@keyframes move{
+    0%, 49.99%{
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100%{
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.social-icons{
+    margin: 20px 0;
+}
+
+.social-icons a{
+    border: 1px solid #ccc;
+    border-radius: 20%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3px;
+    width: 40px;
+    height: 40px;
+}
+
+.toggle-container{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius: 150px 0 0 100px;
+    z-index: 100;
+}
+
+.container.active .toggle-container{
+    transform: translateX(-100%);
+    border-radius: 0 150px 100px 0;
+}
+
+.toggle{
+     background-color: #cfB595;
+    height: 100%;
+      background: linear-gradient(to right, #d8ba96, #512e0b);
+    color: #fff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.container.active .toggle{
+    transform: translateX(50%);
+}
+
+.toggle-panel{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-left{
+    transform: translateX(-200%);
+}
+ 
+ .container.active .toggle-left{
+    transform: translateX(0);
+} 
+
+.toggle-right{
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.active .toggle-right{
+    transform: translateX(200%);
+}
+/* * media */
+@media (max-width:991px) {
+ .container{
+       margin-top: 15rem;
+      width: 600px;
+    max-width: 100%;
+    min-height: 360px;
+ }
+
+
+}
+/* * */
+@media (max-width:768px) {
+
+.container{
+    margin-top: 15rem;
+       width: 450px;
+    max-width: 100%;
+    min-height: 370px;
+}
+.social-icons i{
+    font-size: 1rem;
+    
+}
+ .container .social-icons a{
+ 
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 5px;
+    width: 25px;
+    height: 25px;
+    flex-wrap: nowrap;
+}
+
+.container a{
+    font-size: 10px;
+}
+
+span{
+    display: none;
+}
+.form-container input{
+    
+    margin: 5px 5px 5px 0;
+    padding: 10px 10px;
+      width: 100%;
+  
+}
+.sign-in
+{
+    width: 55%;
+}
+.sign-up
+{
+    width: 55%;
+}
+.sign-up form{
+
+     padding: 0 0px !important;
+      align-items: flex-start !important;
+   justify-content: center;
+   
+}
+ .sign-up input {
+width: 167px;
+ }
+
+}
+/*  */
+@media (max-width:457px)
+{
+
+.container{
+    margin-top: 15rem 8rem 1rem;
+       width: 350px;
+    max-width: 100%;
+    min-height: 350px;
+}
+.container .sign-in button{
+     padding: 8px 30px;
+}
+ .sign-in form{
+
+     padding: 0 20px !important;
+      align-items: flex-start !important;
+   
+   
+}
+ .sign-up form{
+
+     padding: 0 0px !important;
+      align-items: flex-start !important;
+   justify-content: center;
+   
+}
+
+.container input{
+   
+    
+    margin: 5px 5px 5px 0;
+    padding: 10px 10px;
+    width: 80%;
+  
+}
+.toggle-container .hidden{
+    padding: 1.5rem !important;
+}
+.toggle-panel h1{
+    font-size: 1.5rem;
+}
+.toggle-panel p{
+    font-size: 1.2rem;
+
+}
+.sign-in
+{
+    width: 60%;
+}
+.sign-up
+{
+    width: 55%;
+}
+
+
+
+}
